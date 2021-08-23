@@ -25,4 +25,12 @@ describe('sha512', function () {
         expect(actual).toEqual(expected);
     });
 });
+describe('sha', function () {
+    it('defaults to sha512', function () {
+        var input = 'what?';
+        var actual = package_1.sha(input);
+        var expected = '1b688b8b9d00e1e1daa19b41b852ece0dd5ad13e6958188f10cb4e7a2f9ad96342f1a90d463c8af5240e02795695779a4a59087d8ca782afaf427f7c8f61e4e8';
+        expect(actual).toEqual(expected);
+    });
+});
 //# sourceMappingURL=package.spec.js.map

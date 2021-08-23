@@ -1,4 +1,4 @@
-import {sha256, sha512} from './package';
+import {sha, sha256, sha512} from './package';
 
 describe('sha256', () => {
     it('is a function of arity 1', () => {
@@ -21,6 +21,16 @@ describe('sha512', () => {
     it('returns expected output', () => {
         const input = 'what?';
         const actual = sha512(input);
+        const expected = '1b688b8b9d00e1e1daa19b41b852ece0dd5ad13e6958188f10cb4e7a2f9ad96342f1a90d463c8af5240e02795695779a4a59087d8ca782afaf427f7c8f61e4e8';
+        expect(actual).toEqual(expected);
+    });
+});
+
+
+describe('sha', () => {
+    it('defaults to sha512', () => {
+        const input = 'what?';
+        const actual = sha(input);
         const expected = '1b688b8b9d00e1e1daa19b41b852ece0dd5ad13e6958188f10cb4e7a2f9ad96342f1a90d463c8af5240e02795695779a4a59087d8ca782afaf427f7c8f61e4e8';
         expect(actual).toEqual(expected);
     });
